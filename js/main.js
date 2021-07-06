@@ -1,4 +1,3 @@
-"use strict";
 
 const buttonCols = document.querySelector('.btn-form');
 const popupClose = document.querySelector('.popup-close');
@@ -9,6 +8,8 @@ const form = document.querySelector('form');
 const inputName = document.querySelector('#input-name');
 const inputTel = document.querySelector('#input-tel');
 const input = document.querySelector('.input');
+const question = document.querySelectorAll('.question');
+
 
 let max = 12;
 
@@ -85,7 +86,18 @@ formClose.addEventListener('click', (e) => {
   enableScroll();
 })
 
-
+for (item of question) {
+  item.addEventListener('click', function() {
+    if(this.classList.contains('active')){
+      this.classList.remove('active');
+    } else {
+      for(el of question) {
+        el.classList.remove('active');
+      }
+      this.classList.add('active');
+    }
+  })
+}
 
 
 

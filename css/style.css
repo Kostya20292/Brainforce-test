@@ -139,13 +139,6 @@ h3,h4,h5,h6{
 .questions:last-child{
   margin-top: 70px;
 }
-.question{
-  display: flex;
-  align-items: center;
-  background: #F4F4F4;
-  border-radius: 8px;
-  padding: 26px 30px;
-}
 .more{
   display: block;
   width: 19px;
@@ -153,28 +146,56 @@ h3,h4,h5,h6{
   background-image: url(../img/more-open.svg);
   margin-left: auto;
   outline: none;
+  position: absolute;
+  right: 40px;
+  top: 29px;
 }
 .more:hover{
-  background-image: url(../img/more-close.svg)
+  background-image: url(../img/more-open-hover.svg)
 }
 .question{
-  width: 680px;
-  margin-bottom: 5px;
-}
-.question-desc{
-  width: 680px;
-  background: #E0E0E0;
+  /* display: flex;
+  align-items: center; */
+  background: #F4F4F4;
   border-radius: 8px;
   padding: 26px 30px;
-  margin-top: -15px;
+  cursor: pointer;
+  width: 680px;
+  margin-bottom: 5px;
+  position: relative;
 }
-.more:hover .question-desc{
+.question-desc{
   display: block;
+  width: 600px;
+  background: #F4F4F4;
+  border-radius: 8px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 .question-desc-text{
+  height: 80px;
+  overflow: hidden;
   width: 551px;
   line-height: 1.3rem;
   color: #333333;
+  padding-left: 14px;
+}
+.question-desc-text:first-child{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.question.active .question-desc{
+  height: 200px;
+}
+.question.active .question-desc-text{
+  overflow: visible;
+}
+.question.active .more{
+  background-image: url(../img/more-close.svg);
+}
+.question.active .more:hover{
+  background-image: url(../img/more-close-hover.svg);
 }
 .questions-title{
   width: 213px;

@@ -9,9 +9,15 @@ const inputName = document.querySelector('#input-name');
 const inputTel = document.querySelector('#input-tel');
 const input = document.querySelector('.input');
 const question = document.querySelectorAll('.question');
-
+const menuOpen = document.querySelector('.menu-open');
+const nav = document.querySelector('.nav');
 
 let max = 12;
+
+  menuOpen.addEventListener('click', () =>{
+    console.log("fgdgdg");
+    nav.classList.toggle('show-menu');
+  });
 
 const disableScroll = () => {
   const widthScroll = window.innerWidth - document.body.offsetWidth;
